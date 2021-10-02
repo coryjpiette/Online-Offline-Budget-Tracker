@@ -22,6 +22,8 @@ const FILES_TO_CACHE = [
     );
   });
 
+  self.skipWaiting();
+
   self.addEventListener("activate", function(evt) {
     evt.waitUntil(
         caches.keys().then(keyList => {
