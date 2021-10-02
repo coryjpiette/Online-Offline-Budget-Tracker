@@ -16,7 +16,7 @@ const FILES_TO_CACHE = [
     // pre cache all static assets
     evt.waitUntil(
       caches.open(CACHE_NAME).then((cache) => {
-        console.log("Your files were pre-cached successfully!");
+        console.log("Files pre-cached");
         return cache.addAll(FILES_TO_CACHE);
       })
     );
@@ -36,5 +36,6 @@ const FILES_TO_CACHE = [
         );
       })
     );
+    self.clients.claim();
 
   });
