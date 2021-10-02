@@ -64,3 +64,18 @@ function checkDatabase() {
                     "Content-Type": "application/json"
                 }
             })
+
+            .then(response => {        
+                return response.json();
+              })
+              .then(() => {
+             
+                const transaction = db.transaction(["pending"], "readwrite");
+                const store = transaction.objectStore("pending");
+                store.clear();
+              });
+            }
+          };
+        }
+       
+        window.addEventListener("online", checkDatabase)
