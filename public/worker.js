@@ -18,6 +18,7 @@ const FILES_TO_CACHE = [
       caches.open(CACHE_NAME).then((cache) => {
         console.log("Files pre-cached");
         return cache.addAll(FILES_TO_CACHE);
+
       })
     );
   });
@@ -33,11 +34,13 @@ const FILES_TO_CACHE = [
         if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
             console.log("Removing old cache data", key);
             return caches.delete(key);
+
             }
           })
         );
       })
     );
+
     self.clients.claim();
 
   });
@@ -59,3 +62,18 @@ const FILES_TO_CACHE = [
          
               return cache.match(evt.request);
             });
+
+          }).catch(err => console.log(err))
+          );
+          return;
+        }
+      
+        evt.respondWith(
+          caches.open(CACHE_NAME).then(cache => {
+            return cache.match(evt.request).then(response => {
+              return response || fetch(evt.request);
+              
+            });
+          })
+        );
+      });
