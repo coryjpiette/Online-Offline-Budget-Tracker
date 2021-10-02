@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/guarded-shore-64394',
+  process.env.MONGODB_URI || 'mongodb://localhost/Cory_Database',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
