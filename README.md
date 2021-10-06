@@ -36,3 +36,7 @@ After cloning the repo in a Git Bash terminal, run ```npm install``` to install 
   - ```mongoose ```
 
   - ```compression```
+
+
+## Usage
+- To use this Budget Tracker on your local machine, run ```npm start``` from your terminal and use ```localhost:3000``` in your browser.
