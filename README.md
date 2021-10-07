@@ -45,3 +45,8 @@ To use this Budget Tracker on your local machine, run ```npm start``` from your 
 ## Deployed Application
 
 The deployed application can be found [here](https://guarded-shore-64394.herokuapp.com).
+
+Screenshot of deployed application:
+
+![image](https://user-images.githubusercontent.com/60293516/136373022-76b2d65d-6524-4592-938c-7a6d2b7976f6.png)
+
